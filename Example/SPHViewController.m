@@ -9,6 +9,7 @@
 #import "SPHViewController.h"
 
 #import "SPHLocationPickerViewController.h"
+#import "ExampleAutoCompleteTableViewDataSource.h"
 
 @interface SPHViewController ()
 @property (strong, nonatomic) IBOutlet UISwitch *bounceSwitch;
@@ -42,6 +43,7 @@
     locationPicker.dropPin = self.dropPinSwitch.on;
     locationPicker.mapHeight = [self.mapHeightTextField.text floatValue];
     locationPicker.searchable = self.searchableSwitch.on;
+    locationPicker.autocompleteDataSource = [ExampleAutoCompleteTableViewDataSource new];
     /*
     __block SPProfileViewController *blockSelf = self;
     vc.onSuccess = ^(NSDictionary *address){

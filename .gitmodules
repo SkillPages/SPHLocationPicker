@@ -1,0 +1,3 @@
+[submodule "Example/Vendor/SPGooglePlacesAutocomplete"]
+	path = Example/Vendor/SPGooglePlacesAutocomplete
+	url = https://github.com/spoletto/SPGooglePlacesAutocomplete.git

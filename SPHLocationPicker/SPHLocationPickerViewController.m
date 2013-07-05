@@ -212,6 +212,19 @@
 }
 
 #pragma mark - UISearchDisplayDelegate
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if (searchText.length)
+    {
+        [self.autocompleteDataSource updateSearchTerm:searchText
+                                         withLocation:self.mapView.centerCoordinate
+                                           onFinished:^() {
+                                               
+                                               [self.searchController.searchResultsTableView reloadData];
+                                           }];
+    }
+}
+
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
     self.searchBarDismiss = NO;

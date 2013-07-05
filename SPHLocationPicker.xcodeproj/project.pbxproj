@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F50E76C31786FFDE0068DFB9 /* SPHTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E76C21786FFDE0068DFB9 /* SPHTableViewDataSource.m */; };
-		F50E76C617870F5D0068DFB9 /* SPHAutoCompleteTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E76C517870F5D0068DFB9 /* SPHAutoCompleteTableViewDataSource.m */; };
 		F50E76C917870FD00068DFB9 /* ExampleAutoCompleteTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E76C817870FD00068DFB9 /* ExampleAutoCompleteTableViewDataSource.m */; };
 		F51775C01785C33800E86EAC /* SPHLocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F51775BF1785C33800E86EAC /* SPHLocationPickerViewController.m */; };
 		F51775C21785C8A500E86EAC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51775C11785C8A500E86EAC /* CoreLocation.framework */; };
 		F51775C41785CC6F00E86EAC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51775C31785CC6F00E86EAC /* MapKit.framework */; };
+		F5AF29261787164100324680 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF29141787164100324680 /* SPGooglePlacesAutocompletePlace.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F5AF29271787164100324680 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF29161787164100324680 /* SPGooglePlacesAutocompleteQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F5AF29281787164100324680 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF29181787164100324680 /* SPGooglePlacesAutocompleteUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F5AF292B1787164100324680 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF291D1787164100324680 /* SPGooglePlacesPlaceDetailQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F5D965E0178488CE001F7582 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D965DF178488CE001F7582 /* UIKit.framework */; };
 		F5D965E2178488CE001F7582 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D965E1178488CE001F7582 /* Foundation.framework */; };
 		F5D965E4178488CE001F7582 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D965E3178488CE001F7582 /* CoreGraphics.framework */; };
@@ -44,14 +47,20 @@
 /* Begin PBXFileReference section */
 		F50E76C11786FFDE0068DFB9 /* SPHTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHTableViewDataSource.h; sourceTree = "<group>"; };
 		F50E76C21786FFDE0068DFB9 /* SPHTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHTableViewDataSource.m; sourceTree = "<group>"; };
-		F50E76C417870F5D0068DFB9 /* SPHAutoCompleteTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHAutoCompleteTableViewDataSource.h; sourceTree = "<group>"; };
-		F50E76C517870F5D0068DFB9 /* SPHAutoCompleteTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHAutoCompleteTableViewDataSource.m; sourceTree = "<group>"; };
 		F50E76C717870FD00068DFB9 /* ExampleAutoCompleteTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleAutoCompleteTableViewDataSource.h; path = Example/ExampleAutoCompleteTableViewDataSource.h; sourceTree = SOURCE_ROOT; };
 		F50E76C817870FD00068DFB9 /* ExampleAutoCompleteTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleAutoCompleteTableViewDataSource.m; path = Example/ExampleAutoCompleteTableViewDataSource.m; sourceTree = SOURCE_ROOT; };
 		F51775BE1785C33800E86EAC /* SPHLocationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHLocationPickerViewController.h; sourceTree = "<group>"; };
 		F51775BF1785C33800E86EAC /* SPHLocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHLocationPickerViewController.m; sourceTree = "<group>"; };
 		F51775C11785C8A500E86EAC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F51775C31785CC6F00E86EAC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F5AF29131787164100324680 /* SPGooglePlacesAutocompletePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompletePlace.h; sourceTree = "<group>"; };
+		F5AF29141787164100324680 /* SPGooglePlacesAutocompletePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompletePlace.m; sourceTree = "<group>"; };
+		F5AF29151787164100324680 /* SPGooglePlacesAutocompleteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteQuery.h; sourceTree = "<group>"; };
+		F5AF29161787164100324680 /* SPGooglePlacesAutocompleteQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompleteQuery.m; sourceTree = "<group>"; };
+		F5AF29171787164100324680 /* SPGooglePlacesAutocompleteUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteUtilities.h; sourceTree = "<group>"; };
+		F5AF29181787164100324680 /* SPGooglePlacesAutocompleteUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompleteUtilities.m; sourceTree = "<group>"; };
+		F5AF291C1787164100324680 /* SPGooglePlacesPlaceDetailQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesPlaceDetailQuery.h; sourceTree = "<group>"; };
+		F5AF291D1787164100324680 /* SPGooglePlacesPlaceDetailQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesPlaceDetailQuery.m; sourceTree = "<group>"; };
 		F5D965DC178488CE001F7582 /* SPHLocationPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPHLocationPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D965DF178488CE001F7582 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F5D965E1178488CE001F7582 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,11 +118,25 @@
 				F51775BF1785C33800E86EAC /* SPHLocationPickerViewController.m */,
 				F50E76C11786FFDE0068DFB9 /* SPHTableViewDataSource.h */,
 				F50E76C21786FFDE0068DFB9 /* SPHTableViewDataSource.m */,
-				F50E76C417870F5D0068DFB9 /* SPHAutoCompleteTableViewDataSource.h */,
-				F50E76C517870F5D0068DFB9 /* SPHAutoCompleteTableViewDataSource.m */,
 			);
 			path = SPHLocationPicker;
 			sourceTree = "<group>";
+		};
+		F5AF29071787164100324680 /* SPGooglePlacesAutocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				F5AF29131787164100324680 /* SPGooglePlacesAutocompletePlace.h */,
+				F5AF29141787164100324680 /* SPGooglePlacesAutocompletePlace.m */,
+				F5AF29151787164100324680 /* SPGooglePlacesAutocompleteQuery.h */,
+				F5AF29161787164100324680 /* SPGooglePlacesAutocompleteQuery.m */,
+				F5AF29171787164100324680 /* SPGooglePlacesAutocompleteUtilities.h */,
+				F5AF29181787164100324680 /* SPGooglePlacesAutocompleteUtilities.m */,
+				F5AF291C1787164100324680 /* SPGooglePlacesPlaceDetailQuery.h */,
+				F5AF291D1787164100324680 /* SPGooglePlacesPlaceDetailQuery.m */,
+			);
+			name = SPGooglePlacesAutocomplete;
+			path = Example/Vendor/SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete;
+			sourceTree = SOURCE_ROOT;
 		};
 		F5D965D3178488CE001F7582 = {
 			isa = PBXGroup;
@@ -151,14 +174,15 @@
 		F5D965E5178488CE001F7582 /* SPHLocationPickerExample */ = {
 			isa = PBXGroup;
 			children = (
+				F5AF29071787164100324680 /* SPGooglePlacesAutocomplete */,
 				F5D96633178489E0001F7582 /* SPHAppDelegate.h */,
 				F5D96634178489E0001F7582 /* SPHAppDelegate.m */,
 				F5D96637178489E0001F7582 /* SPHViewController.h */,
 				F5D96638178489E0001F7582 /* SPHViewController.m */,
 				F5D9662B17848997001F7582 /* SPHViewController.xib */,
-				F5D965E6178488CE001F7582 /* Supporting Files */,
 				F50E76C717870FD00068DFB9 /* ExampleAutoCompleteTableViewDataSource.h */,
 				F50E76C817870FD00068DFB9 /* ExampleAutoCompleteTableViewDataSource.m */,
+				F5D965E6178488CE001F7582 /* Supporting Files */,
 			);
 			name = SPHLocationPickerExample;
 			path = SPHLocationPicker;
@@ -313,8 +337,11 @@
 				F5D9663C178489E0001F7582 /* SPHViewController.m in Sources */,
 				F51775C01785C33800E86EAC /* SPHLocationPickerViewController.m in Sources */,
 				F50E76C31786FFDE0068DFB9 /* SPHTableViewDataSource.m in Sources */,
-				F50E76C617870F5D0068DFB9 /* SPHAutoCompleteTableViewDataSource.m in Sources */,
 				F50E76C917870FD00068DFB9 /* ExampleAutoCompleteTableViewDataSource.m in Sources */,
+				F5AF29261787164100324680 /* SPGooglePlacesAutocompletePlace.m in Sources */,
+				F5AF29271787164100324680 /* SPGooglePlacesAutocompleteQuery.m in Sources */,
+				F5AF29281787164100324680 /* SPGooglePlacesAutocompleteUtilities.m in Sources */,
+				F5AF292B1787164100324680 /* SPGooglePlacesPlaceDetailQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

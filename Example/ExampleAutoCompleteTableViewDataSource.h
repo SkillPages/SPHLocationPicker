@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 SkillPages Holdings. All rights reserved.
 //
 
-#import "SPHAutoCompleteTableViewDataSource.h"
+#import "SPHLocationPickerViewController.h"
 
-@interface ExampleAutoCompleteTableViewDataSource : SPHAutoCompleteTableViewDataSource
+@interface ExampleAutoCompleteTableViewDataSource : NSObject <UITableViewDataSource, SPHAutoComplete>
 
 @end
