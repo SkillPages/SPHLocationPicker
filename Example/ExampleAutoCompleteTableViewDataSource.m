@@ -32,7 +32,7 @@
     return self;
 }
 
-- (void)updateSearchTerm:(NSString *)term withLocation:(CLLocationCoordinate2D)location onFinished:(successResponseBlock)successBlock
+- (void)updateSearchTerm:(NSString *)term withLocation:(CLLocationCoordinate2D)location onFinished:(SPHLocationPickerSuccessBlock)successBlock
 {
     if ([term length])
     {
@@ -61,10 +61,14 @@
     }
 }
 
-- (void)placemarkForRow:(NSIndexPath *)indexPath
+- (void)placemarkAtIndex:(NSInteger)index onSucess:(SPHLocationPickerSuccessReturnBlock)sucess onFailure:(SPHLocationPickerFauilreBlock)failure
 {
-    [self.places[indexPath.row] resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
-        
+    [self.places[index] resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
+        if (placemark) {
+            sucess(placemark);
+        } else if (error) {
+            failure(error);
+        }
     }];
 }
 
