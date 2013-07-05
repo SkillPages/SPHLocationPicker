@@ -114,7 +114,27 @@
                              completion:nil];
 }
 
-#pragma mark - 
+- (void)addAnnotation:(CLLocationCoordinate2D)coordinate doGeocode:(BOOL)code
+{
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = coordinate;
+    /*
+     for (id annotation in self.mapView.annotations) {
+     [self.mapView removeAnnotation:annotation];
+     }
+     */
+    
+    [self.mapView addAnnotation:point];
+    self.mapView.centerCoordinate = coordinate;
+    
+    if (code) {
+        CLLocation *centerLocation = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    
+        [self geocode:centerLocation];
+    }
+}
+
+#pragma mark -
 - (void)geocode:(CLLocation *)location
 {
     [self.geocoder cancelGeocode];
@@ -166,14 +186,25 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
+    
     if (tableView == self.tableView) {
-        [[self.tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
-        
         CLPlacemark *place = [self.tableDataSource fetchPlaceAtIndex:indexPath.row];
         CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake(place.location.coordinate.latitude,
                                                                       place.location.coordinate.longitude);
         self.mapView.centerCoordinate = newCenter;
         return;
+    } else if (tableView == self.searchController.searchResultsTableView) {
+        [self.autocompleteDataSource placemarkAtIndex:indexPath.row
+                                             onSucess:^(CLPlacemark *place) {
+                                                 [self.tableDataSource addPlace:place];
+                                                 [self.tableView reloadData];
+                                                 [self addAnnotation:place.location.coordinate doGeocode:NO];
+                                                 [self dismissSearchBar];
+                                             }
+                                            onFailure:^(NSError *error) {
+                                                NSLog(@"Error: %@", error);
+                                            }];
     }
 }
 
@@ -193,20 +224,8 @@
     {
         CGPoint touchPoint = [sender locationInView:self.mapView];
         CLLocationCoordinate2D touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
-        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-        point.coordinate = touchMapCoordinate;
-        /*
-        for (id annotation in self.mapView.annotations) {
-            [self.mapView removeAnnotation:annotation];
-        }
-         */
-        
-        [self.mapView addAnnotation:point];
-        self.mapView.centerCoordinate = touchMapCoordinate;
-        
-        CLLocation *centerLocation = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
-        
-        [self geocode:centerLocation];
+
+        [self addAnnotation:touchMapCoordinate doGeocode:YES];
     }
 }
 
