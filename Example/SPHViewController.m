@@ -36,7 +36,7 @@
 }
 
 - (IBAction)showMapAction:(id)sender {
-    SPHLocationPickerViewController *locationPicker = [SPHLocationPickerViewController new];
+    SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewController alloc] initWithSucess:nil onFailure:nil];
     
     locationPicker.bounce = self.bounceSwitch.on;
     locationPicker.showUserLocation = self.userLocationSwitch.on;

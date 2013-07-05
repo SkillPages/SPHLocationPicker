@@ -21,13 +21,15 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (assign, nonatomic) BOOL searchBarDismiss;
+@property (copy, nonatomic) SPHLocationPickerSuccessReturnBlock sucess;
+@property (copy, nonatomic) SPHLocationPickerFauilreBlock failure;
 @end
 
 @implementation SPHLocationPickerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithSucess:(SPHLocationPickerSuccessReturnBlock)sucess onFailure:(SPHLocationPickerFauilreBlock)failure;
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
         // Custom initialization
         self.mapHeight = kDefaultMapHeight;
@@ -37,6 +39,9 @@
         self.searchable = NO;
         
         self.geocoder = [CLGeocoder new];
+        
+        self.sucess = sucess;
+        self.failure = failure;
     }
     return self;
 }

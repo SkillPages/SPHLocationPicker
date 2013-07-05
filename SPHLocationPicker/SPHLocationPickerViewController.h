@@ -30,4 +30,5 @@ typedef void (^SPHLocationPickerFauilreBlock)(NSError* error);
 @property (strong, nonatomic) SPHTableViewDataSource *tableDataSource;
 @property (strong, nonatomic) id <SPHAutoComplete, UITableViewDataSource> autocompleteDataSource;
 
+- (id)initWithSucess:(SPHLocationPickerSuccessReturnBlock)sucess onFailure:(SPHLocationPickerFauilreBlock)failure;
 @end
