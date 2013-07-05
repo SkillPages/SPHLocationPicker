@@ -9,10 +9,12 @@
 #import <CoreLocation/CoreLocation.h>
 
 typedef void (^SPHLocationPickerSuccessReturnBlock)(CLPlacemark *place);
-typedef void (^successResponseBlock)(void);
+typedef void (^SPHLocationPickerSuccessBlock)(void);
+typedef void (^SPHLocationPickerFauilreBlock)(NSError* error);
 
 @protocol SPHAutoComplete
-- (void)updateSearchTerm:(NSString *)term withLocation:(CLLocationCoordinate2D)location onFinished:(successResponseBlock)successBlock;
+- (void)updateSearchTerm:(NSString *)term withLocation:(CLLocationCoordinate2D)location onFinished:(SPHLocationPickerSuccessBlock)success;
+- (void)placemarkAtIndex:(NSInteger)index onSucess:(SPHLocationPickerSuccessReturnBlock)sucess onFailure:(SPHLocationPickerFauilreBlock)failure;
 @end
 
 @class SPHTableViewDataSource;
@@ -26,6 +28,6 @@ typedef void (^successResponseBlock)(void);
 @property (assign, nonatomic, getter = canSearch) BOOL searchable;
 @property (assign, nonatomic) CGFloat mapHeight;
 @property (strong, nonatomic) SPHTableViewDataSource *tableDataSource;
-@property (weak) id <SPHAutoComplete> autocompleteDataSource;
+@property (strong, nonatomic) id <SPHAutoComplete, UITableViewDataSource> autocompleteDataSource;
 
 @end
