@@ -11,7 +11,6 @@
 #import "SPHLocationPickerViewController.h"
 
 #import "SPHTableViewDataSource.h"
-#import "SPHAutoCompleteTableViewDataSource.h"
 
 #define kDefaultMapHeight     150.0f
 
