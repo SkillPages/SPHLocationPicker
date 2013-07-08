@@ -14,8 +14,12 @@ SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewControl
     }
                                                                                                     onFailure:nil];
 ```
+
 4. You can provide your own datasource for the UITableView using the property `tableDataSource`. This should conform to both `SPHTableViewDataSource` and `UITableViewDataSource`. A default implementation of this is already provided.
-5. Optionally set one of the configuration options
+5. Optionally set one of the configuration options.
+6. Push the controller
+
+### Options
 
 `bounce` (default YES) When set to YES, the tableview map will return to the set size on release.
 
@@ -28,8 +32,6 @@ SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewControl
 `zoomToDroppedPin` (default YES) When set to YES the map will zoom into the dropped pin.
 
 `mapHeight` (default 150) The initial height of the map. If the map bounces, it will return to this size.
-
-6. Push the controller
 
 ### Example
 To run the example project, you will need to initialise the [SPGooglePlacesAutocomplete](https://github.com/spoletto/SPGooglePlacesAutocomplete) submodule:
