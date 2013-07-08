@@ -5,17 +5,17 @@ SPHLocationPicker provides a configurable UITableView with a dynamically resizin
 
 ##Usage
 
-1. Link `CoreLocation.framework` and `MapKit.framework` to your project.
-1a. If you are using the default data source for the tableviews, you'll also need to link to `AddressBookUI.framework`
+1. Link `CoreLocation.framework` and `MapKit.framework` to your project. If you are using the default data source for the tableviews, you'll also need to link to `AddressBookUI.framework`
 2. Include the `SPHLocationPickerViewController.h` header
-3. Initialise the SPHLocationPikcer
+3. Initialise the SPHLocationPicker
 ``` objective-c
 SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewController alloc] initWithSucess:^(CLPlacemark *place){
         NSLog(@"%@", place.addressDictionary);
     }
                                                                                                     onFailure:nil];
 ```
-4. Optionally set one of the configuration options
+4. You can provide your own datasource for the UITableView using the property `tableDataSource`. This should conform to both `SPHTableViewDataSource` and `UITableViewDataSource`. A default implementation of this is already provided.
+5. Optionally set one of the configuration options
 
 `bounce` (default YES) When set to YES, the tableview map will return to the set size on release.
 
@@ -29,7 +29,7 @@ SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewControl
 
 `mapHeight` (default 150) The initial height of the map. If the map bounces, it will return to this size.
 
-5. Push the controller
+6. Push the controller
 
 ### Example
 To run the example project, you will need to initialise the [SPGooglePlacesAutocomplete](https://github.com/spoletto/SPGooglePlacesAutocomplete) submodule:
