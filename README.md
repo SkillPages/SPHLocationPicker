@@ -8,7 +8,7 @@ SPHLocationPicker provides a configurable UITableView with a dynamically resizin
 1. Link `CoreLocation.framework` and `MapKit.framework` to your project. If you are using the default data source for the tableviews, you'll also need to link to `AddressBookUI.framework`
 2. Include the `SPHLocationPickerViewController.h` header
 3. Initialise the SPHLocationPicker
-``` objective-c
+```objective-c
 SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewController alloc] initWithSucess:^(CLPlacemark *place){
         NSLog(@"%@", place.addressDictionary);
     }
@@ -51,7 +51,7 @@ If you are using SPHLocationPicker in your non-arc project, you will need to set
 
 To set a compiler flag in Xcode, go to your active target and select the "Build Phases" tab. Now select all SPHLocationPicker source files, press Enter, insert `-fobjc-arc` and then "Done" to enable ARC for SPHLocationPicker.
 
-### Creators
+### Creator
 
 [Karl Monaghan](http://github.com/kmonaghan)
 [@karlmonaghan](https://twitter.com/karlmonaghan)
