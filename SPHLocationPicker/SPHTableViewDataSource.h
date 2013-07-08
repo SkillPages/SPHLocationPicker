@@ -6,9 +6,8 @@
 //  Copyright (c) 2013 SkillPages Holdings. All rights reserved.
 //
 
-#import <MapKit/MapKit.h>
+#import "SPHLocationPickerViewController.h"
 
-@interface SPHTableViewDataSource : NSObject <UITableViewDataSource>
-- (void)addPlace:(CLPlacemark *)place;
-- (CLPlacemark *)fetchPlaceAtIndex:(NSInteger)index;
+@interface SPHTableViewDataSource : NSObject <UITableViewDataSource, SPHTableViewDataSource>
+
 @end

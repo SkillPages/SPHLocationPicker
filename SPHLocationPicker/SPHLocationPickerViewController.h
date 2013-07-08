@@ -12,6 +12,11 @@ typedef void (^SPHLocationPickerSuccessReturnBlock)(CLPlacemark *place);
 typedef void (^SPHLocationPickerSuccessBlock)(void);
 typedef void (^SPHLocationPickerFauilreBlock)(NSError* error);
 
+@protocol SPHTableViewDataSource
+- (void)addPlace:(CLPlacemark *)place;
+- (CLPlacemark *)fetchPlaceAtIndex:(NSInteger)index;
+@end
+
 @protocol SPHAutoComplete
 - (void)updateSearchTerm:(NSString *)term withLocation:(CLLocationCoordinate2D)location onFinished:(SPHLocationPickerSuccessBlock)success;
 - (void)placemarkAtIndex:(NSInteger)index onSuccess:(SPHLocationPickerSuccessReturnBlock)success onFailure:(SPHLocationPickerFauilreBlock)failure;
@@ -28,7 +33,7 @@ typedef void (^SPHLocationPickerFauilreBlock)(NSError* error);
 @property (assign, nonatomic, getter = canSearch) BOOL searchable;
 @property (assign, nonatomic, getter = willZoom) BOOL zoomToDroppedPin;
 @property (assign, nonatomic) CGFloat mapHeight;
-@property (strong, nonatomic) SPHTableViewDataSource *tableDataSource;
+@property (strong, nonatomic) id <SPHTableViewDataSource, UITableViewDataSource> tableDataSource;
 @property (strong, nonatomic) id <SPHAutoComplete, UITableViewDataSource> autocompleteDataSource;
 
 - (id)initWithSucess:(SPHLocationPickerSuccessReturnBlock)sucess onFailure:(SPHLocationPickerFauilreBlock)failure;
