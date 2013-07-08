@@ -58,8 +58,8 @@
 
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:locationPicker];
     [self presentViewController:navController
-                                            animated:YES
-                                          completion:nil];
+                       animated:YES
+                     completion:nil];
 }
 - (void)viewDidUnload {
     [self setZoomableSwitch:nil];
