@@ -51,7 +51,7 @@
 	{
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"placemark"];
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
-        cell.textLabel.minimumScaleFactor = 0.75f;
+        cell.textLabel.minimumFontSize = 10.0f;
 	}
     
 	cell.textLabel.text = ABCreateStringWithAddressDictionary(((CLPlacemark *)self.places[indexPath.row]).addressDictionary, YES);
