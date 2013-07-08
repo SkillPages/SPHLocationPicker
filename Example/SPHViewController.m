@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 SkillPages Holdings. All rights reserved.
 //
 
+#import <AddressBookUI/AddressBookUI.h>
+
 #import "SPHViewController.h"
 
 #import "SPHLocationPickerViewController.h"
@@ -17,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UISwitch *dropPinSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *searchableSwitch;
 @property (strong, nonatomic) IBOutlet UITextField *mapHeightTextField;
+@property (strong, nonatomic) IBOutlet UILabel *locationNameLabel;
 
 - (IBAction)showMapAction:(id)sender;
 @end
@@ -36,7 +39,11 @@
 }
 
 - (IBAction)showMapAction:(id)sender {
-    SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewController alloc] initWithSucess:nil onFailure:nil];
+    SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewController alloc] initWithSucess:^(CLPlacemark *place){
+        self.locationNameLabel.text = ABCreateStringWithAddressDictionary(place.addressDictionary, YES);
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+                                                                                                    onFailure:nil];
     
     locationPicker.bounce = self.bounceSwitch.on;
     locationPicker.showUserLocation = self.userLocationSwitch.on;
@@ -44,15 +51,7 @@
     locationPicker.mapHeight = [self.mapHeightTextField.text floatValue];
     locationPicker.searchable = self.searchableSwitch.on;
     locationPicker.autocompleteDataSource = [ExampleAutoCompleteTableViewDataSource new];
-    /*
-    __block SPProfileViewController *blockSelf = self;
-    vc.onSuccess = ^(NSDictionary *address){
-        [blockSelf dismissViewControllerAnimated:YES completion:nil];
-        
-        blockSelf.location.text = address[@"formatted_address"];
-        //blockSelf.locationDetails = address;
-    };
-    */
+
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:locationPicker];
     [self presentViewController:navController
                                             animated:YES

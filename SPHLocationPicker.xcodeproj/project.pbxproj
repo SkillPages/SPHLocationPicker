@@ -12,6 +12,7 @@
 		F51775C01785C33800E86EAC /* SPHLocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F51775BF1785C33800E86EAC /* SPHLocationPickerViewController.m */; };
 		F51775C21785C8A500E86EAC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51775C11785C8A500E86EAC /* CoreLocation.framework */; };
 		F51775C41785CC6F00E86EAC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51775C31785CC6F00E86EAC /* MapKit.framework */; };
+		F581B946178AB37E00A69BDA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B945178AB37E00A69BDA /* AddressBookUI.framework */; };
 		F5AF29261787164100324680 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF29141787164100324680 /* SPGooglePlacesAutocompletePlace.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F5AF29271787164100324680 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF29161787164100324680 /* SPGooglePlacesAutocompleteQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F5AF29281787164100324680 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF29181787164100324680 /* SPGooglePlacesAutocompleteUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -53,6 +54,7 @@
 		F51775BF1785C33800E86EAC /* SPHLocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHLocationPickerViewController.m; sourceTree = "<group>"; };
 		F51775C11785C8A500E86EAC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F51775C31785CC6F00E86EAC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F581B945178AB37E00A69BDA /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		F5AF29131787164100324680 /* SPGooglePlacesAutocompletePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompletePlace.h; sourceTree = "<group>"; };
 		F5AF29141787164100324680 /* SPGooglePlacesAutocompletePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompletePlace.m; sourceTree = "<group>"; };
 		F5AF29151787164100324680 /* SPGooglePlacesAutocompleteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteQuery.h; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F581B946178AB37E00A69BDA /* AddressBookUI.framework in Frameworks */,
 				F51775C41785CC6F00E86EAC /* MapKit.framework in Frameworks */,
 				F51775C21785C8A500E86EAC /* CoreLocation.framework in Frameworks */,
 				F5D965E0178488CE001F7582 /* UIKit.framework in Frameworks */,
@@ -141,6 +144,7 @@
 		F5D965D3178488CE001F7582 = {
 			isa = PBXGroup;
 			children = (
+				F581B945178AB37E00A69BDA /* AddressBookUI.framework */,
 				F51775BD1785C30100E86EAC /* SPHLocationPicker */,
 				F5D965E5178488CE001F7582 /* SPHLocationPickerExample */,
 				F5D96609178488CE001F7582 /* SPHLocationPickerTests */,

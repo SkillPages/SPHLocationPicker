@@ -14,7 +14,7 @@ typedef void (^SPHLocationPickerFauilreBlock)(NSError* error);
 
 @protocol SPHAutoComplete
 - (void)updateSearchTerm:(NSString *)term withLocation:(CLLocationCoordinate2D)location onFinished:(SPHLocationPickerSuccessBlock)success;
-- (void)placemarkAtIndex:(NSInteger)index onSucess:(SPHLocationPickerSuccessReturnBlock)sucess onFailure:(SPHLocationPickerFauilreBlock)failure;
+- (void)placemarkAtIndex:(NSInteger)index onSuccess:(SPHLocationPickerSuccessReturnBlock)success onFailure:(SPHLocationPickerFauilreBlock)failure;
 @end
 
 @class SPHTableViewDataSource;

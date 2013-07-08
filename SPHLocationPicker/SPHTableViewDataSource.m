@@ -5,6 +5,7 @@
 //  Created by Karl Monaghan on 05/07/2013.
 //  Copyright (c) 2013 SkillPages Holdings. All rights reserved.
 //
+#import <AddressBookUI/AddressBookUI.h>
 
 #import "SPHTableViewDataSource.h"
 
@@ -53,7 +54,7 @@
         cell.textLabel.minimumScaleFactor = 0.75f;
 	}
     
-	cell.textLabel.text = ((CLPlacemark *)self.places[indexPath.row]).name ;
+	cell.textLabel.text = ABCreateStringWithAddressDictionary(((CLPlacemark *)self.places[indexPath.row]).addressDictionary, YES);
 	
 	return cell;
 }

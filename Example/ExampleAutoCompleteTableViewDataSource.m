@@ -61,11 +61,11 @@
     }
 }
 
-- (void)placemarkAtIndex:(NSInteger)index onSucess:(SPHLocationPickerSuccessReturnBlock)sucess onFailure:(SPHLocationPickerFauilreBlock)failure
+- (void)placemarkAtIndex:(NSInteger)index onSuccess:(SPHLocationPickerSuccessReturnBlock)success onFailure:(SPHLocationPickerFauilreBlock)failure
 {
     [self.places[index] resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
         if (placemark) {
-            sucess(placemark);
+            success(placemark);
         } else if (error) {
             failure(error);
         }

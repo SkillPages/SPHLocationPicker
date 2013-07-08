@@ -21,13 +21,13 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (assign, nonatomic) BOOL searchBarDismiss;
-@property (copy, nonatomic) SPHLocationPickerSuccessReturnBlock sucess;
+@property (copy, nonatomic) SPHLocationPickerSuccessReturnBlock success;
 @property (copy, nonatomic) SPHLocationPickerFauilreBlock failure;
 @end
 
 @implementation SPHLocationPickerViewController
 
-- (id)initWithSucess:(SPHLocationPickerSuccessReturnBlock)sucess onFailure:(SPHLocationPickerFauilreBlock)failure;
+- (id)initWithSucess:(SPHLocationPickerSuccessReturnBlock)success onFailure:(SPHLocationPickerFauilreBlock)failure;
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
@@ -40,7 +40,7 @@
         
         self.geocoder = [CLGeocoder new];
         
-        self.sucess = sucess;
+        self.success = success;
         self.failure = failure;
     }
     return self;
@@ -198,10 +198,14 @@
         CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake(place.location.coordinate.latitude,
                                                                       place.location.coordinate.longitude);
         self.mapView.centerCoordinate = newCenter;
+        
+        if (self.success) {
+            self.success(place);
+        }
         return;
     } else if (tableView == self.searchController.searchResultsTableView) {
         [self.autocompleteDataSource placemarkAtIndex:indexPath.row
-                                             onSucess:^(CLPlacemark *place) {
+                                             onSuccess:^(CLPlacemark *place) {
                                                  [self.tableDataSource addPlace:place];
                                                  [self.tableView reloadData];
                                                  [self addAnnotation:place.location.coordinate doGeocode:NO];
