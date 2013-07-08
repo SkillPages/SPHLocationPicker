@@ -5,7 +5,7 @@ SPHLocationPicker provides a configurable UITableView with a dynamically resizin
 
 ##Usage
 
-1. Link `CoreLocation.framework` and `MapKit.framework` to your project
+1. Link `CoreLocation.framework` and `MapKit.framework` to your project.
 1a. If you are using the default data source for the tableviews, you'll also need to link to `AddressBookUI.framework`
 2. Include the `SPHLocationPickerViewController.h` header
 3. Initialise the SPHLocationPikcer
@@ -16,11 +16,17 @@ SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewControl
                                                                                                     onFailure:nil];
 ```
 4. Optionally set one of the configuration options
+
 `bounce` (default YES) When set to YES, the tableview map will return to the set size on release.
+
 `dropPin` (default YES) Allow pins to be dropped on the map.
+
 `showUserLocation` (default YES) Turn on or off the user's location.
-`searchable` (default NO) When this is set, a datasource which conforms to both `UITableViewDateSource` and `SPHAutoComplete` must be provided. This will then display a search bar under the map which will allow the 
+
+`searchable` (default NO) When this is set, a datasource which conforms to both `UITableViewDateSource` and `SPHAutoComplete` must be provided. This will then display a search bar under the map which will allow the user to search for a location.
+ 
 `zoomToDroppedPin` (default YES) When set to YES the map will zoom into the dropped pin.
+
 `mapHeight` (default 150) The initial height of the map. If the map bounces, it will return to this size.
 
 5. Push the controller
