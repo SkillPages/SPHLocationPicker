@@ -36,6 +36,7 @@
         self.bounce = YES;
         self.dropPin = YES;
         self.showUserLocation = YES;
+        self.zoomToDroppedPin = YES;
         self.searchable = NO;
         
         self.geocoder = [CLGeocoder new];
@@ -123,16 +124,26 @@
 {
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = coordinate;
-    /*
-     for (id annotation in self.mapView.annotations) {
-     [self.mapView removeAnnotation:annotation];
-     }
-     */
+
     
     [self.mapView addAnnotation:point];
     self.mapView.centerCoordinate = coordinate;
     
-    if (code) {
+    if (self.zoomToDroppedPin)
+    {
+        MKCoordinateRegion region = {{0.0f, 0.0f}, {0.0f, 0.0f}};
+    
+        region.center = coordinate;
+    
+        region.span.longitudeDelta = 0.02;
+    
+        region.span.latitudeDelta = 0.02;
+    
+        [self.mapView setRegion:region animated:YES];
+    }
+    
+    if (code)
+    {
         CLLocation *centerLocation = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
     
         [self geocode:centerLocation];

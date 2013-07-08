@@ -26,6 +26,7 @@ typedef void (^SPHLocationPickerFauilreBlock)(NSError* error);
 @property (assign, nonatomic, getter = canDropPin) BOOL dropPin;
 @property (assign, nonatomic, getter = willShowUserLocation) BOOL showUserLocation;
 @property (assign, nonatomic, getter = canSearch) BOOL searchable;
+@property (assign, nonatomic, getter = willZoom) BOOL zoomToDroppedPin;
 @property (assign, nonatomic) CGFloat mapHeight;
 @property (strong, nonatomic) SPHTableViewDataSource *tableDataSource;
 @property (strong, nonatomic) id <SPHAutoComplete, UITableViewDataSource> autocompleteDataSource;

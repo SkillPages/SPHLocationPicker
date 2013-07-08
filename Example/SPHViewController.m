@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UISwitch *bounceSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *userLocationSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *dropPinSwitch;
+@property (strong, nonatomic) IBOutlet UISwitch *zoomableSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *searchableSwitch;
 @property (strong, nonatomic) IBOutlet UITextField *mapHeightTextField;
 @property (strong, nonatomic) IBOutlet UILabel *locationNameLabel;
@@ -48,13 +49,20 @@
     locationPicker.bounce = self.bounceSwitch.on;
     locationPicker.showUserLocation = self.userLocationSwitch.on;
     locationPicker.dropPin = self.dropPinSwitch.on;
-    locationPicker.mapHeight = [self.mapHeightTextField.text floatValue];
     locationPicker.searchable = self.searchableSwitch.on;
+    locationPicker.zoomToDroppedPin = self.zoomableSwitch.on;
+    
+    locationPicker.mapHeight = [self.mapHeightTextField.text floatValue];
+    
     locationPicker.autocompleteDataSource = [ExampleAutoCompleteTableViewDataSource new];
 
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:locationPicker];
     [self presentViewController:navController
                                             animated:YES
                                           completion:nil];
+}
+- (void)viewDidUnload {
+    [self setZoomableSwitch:nil];
+    [super viewDidUnload];
 }
 @end
