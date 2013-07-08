@@ -106,6 +106,13 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
                                                                                           action:@selector(cancel)];
+    
+    int total = [self.tableDataSource tableView:self.tableView numberOfRowsInSection:0];
+    
+    for (int i = 0; i < total; i++)
+    {
+        [self addAnnotation:([self.tableDataSource fetchPlaceAtIndex:i]).location.coordinate doGeocode:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning
