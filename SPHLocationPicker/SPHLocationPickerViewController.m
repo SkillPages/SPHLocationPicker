@@ -238,6 +238,19 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
+    if (!decelerate)
+    {
+        [self scrollingEnded];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self scrollingEnded];
+}
+
+- (void)scrollingEnded
+{
     if (self.bounce && self.mapView.frame.size.height > self.mapHeight) {
         [UIView animateWithDuration:0.3 animations:^() {
             [self.tableView setContentOffset:CGPointMake(0, -self.mapHeight) animated:YES];
