@@ -4,6 +4,19 @@ SPHLocationPicker
 SPHLocationPicker provides a configurable UITableView with a dynamically resizing MKMapView which can be used to allow a user select a location. The map can expand and contract as the user drags the tableview. The selected item can be returned to the calling controller as a [CLPlacemark](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLPlacemark_class/Reference/Reference.html).
 
 ##Usage
+```obj-c
+    SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewController alloc] initWithSucess:^(CLPlacemark *place){
+        NSLog(@"place.addressDictionary: %@", place.addressDictionary);
+    }
+                                                                                                    onFailure:nil];
+
+    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:locationPicker];
+    [self presentViewController:navController
+                       animated:YES
+                     completion:nil];
+```
+
+## Installation
 
 1. Link `CoreLocation.framework` and `MapKit.framework` to your project. If you are using the default data source for the tableviews, you'll also need to link to `AddressBookUI.framework`
 2. Include the `SPHLocationPickerViewController.h` header
@@ -53,7 +66,7 @@ If you are using SPHLocationPicker in your non-arc project, you will need to set
 
 To set a compiler flag in Xcode, go to your active target and select the "Build Phases" tab. Now select all SPHLocationPicker source files, press Enter, insert `-fobjc-arc` and then "Done" to enable ARC for SPHLocationPicker.
 
-### Creator
+## Creator
 
 [Karl Monaghan](http://github.com/kmonaghan)
 [@karlmonaghan](https://twitter.com/karlmonaghan)
