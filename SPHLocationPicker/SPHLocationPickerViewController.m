@@ -7,6 +7,7 @@
 //
 
 #import <MapKit/MapKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 #import "SPHLocationPickerViewController.h"
 
@@ -54,27 +55,24 @@
                            context:NULL];
 }
 
-- (void)viewDidLoad
+- (void)loadView
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [super loadView];
     
-    if (!self.tableDataSource)
-    {
-        self.tableDataSource = [SPHTableViewDataSource new];
-    }
+     self.view.backgroundColor = [UIColor whiteColor];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.tableView.delegate = self;
-    self.tableView.dataSource = self.tableDataSource;
     self.tableView.contentInset = UIEdgeInsetsMake(self.mapHeight, 0, 0, 0);
-    
-    [self.tableView addObserver:self
-                     forKeyPath:@"contentOffset"
-                        options:NSKeyValueObservingOptionNew
-                        context:NULL];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.layer.zPosition = 1;
     
     [self.view addSubview:self.tableView];
+    
+    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.mapHeight)];
+    self.mapView.showsUserLocation = self.showUserLocation;
+    
+    [self.view addSubview:self.mapView];
     
     if (self.searchable)
     {
@@ -84,24 +82,46 @@
         self.searchController = [[UISearchDisplayController alloc]
                                  initWithSearchBar:self.locationSearchBar contentsController:self];
         self.searchController.delegate = self;
-        self.searchController.searchResultsDataSource = self.autocompleteDataSource;
         self.searchController.searchResultsDelegate = self;
         
         self.tableView.tableHeaderView = self.locationSearchBar;
         
         self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - self.locationSearchBar.frame.size.height);
     }
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+   
     
-    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.mapHeight)];
-    self.mapView.showsUserLocation = self.showUserLocation;
+    if (!self.tableDataSource)
+    {
+        self.tableDataSource = [SPHTableViewDataSource new];
+    }
     
+
+    self.tableView.dataSource = self.tableDataSource;
+    
+    
+    [self.tableView addObserver:self
+                     forKeyPath:@"contentOffset"
+                        options:NSKeyValueObservingOptionNew
+                        context:NULL];
+
+    
+    if (self.searchable)
+    {
+        self.searchController.searchResultsDataSource = self.autocompleteDataSource;
+    }
+
     if (self.dropPin)
     {
         UITapGestureRecognizer *mapTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         [self.mapView addGestureRecognizer:mapTap];
     }
-    
-    [self.view addSubview:self.mapView];
+
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self

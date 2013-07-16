@@ -18,7 +18,7 @@ SPHLocationPicker provides a configurable UITableView with a dynamically resizin
 
 ## Installation
 
-1. Link `CoreLocation.framework` and `MapKit.framework` to your project. If you are using the default data source for the tableviews, you'll also need to link to `AddressBookUI.framework`
+1. Link `CoreLocation.framework`, `MapKit.framework` and `QuartzCore.framework` to your project. If you are using the default data source for the tableviews, you'll also need to link to `AddressBookUI.framework`
 2. Include the `SPHLocationPickerViewController.h` header
 3. Initialise the SPHLocationPicker
 ```obj-c
