@@ -10,6 +10,7 @@
 
 #import "SPGooglePlacesAutocompleteQuery.h"
 #import "SPGooglePlacesAutocompletePlace.h"
+#import "SVProgressHUD.h"
 
 @interface ExampleAutoCompleteTableViewDataSource()
 @property (strong, nonatomic) SPGooglePlacesAutocompleteQuery *searchQuery;
@@ -63,10 +64,13 @@
 
 - (void)placemarkAtIndex:(NSInteger)index onSuccess:(SPHLocationPickerSuccessReturnBlock)success onFailure:(SPHLocationPickerFauilreBlock)failure
 {
+    [SVProgressHUD showWithStatus:@"Fetching details"];
     [self.places[index] resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
         if (placemark) {
+            [SVProgressHUD dismiss];
             success(placemark);
         } else if (error) {
+            [SVProgressHUD dismiss];
             failure(error);
         }
     }];

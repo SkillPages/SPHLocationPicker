@@ -47,7 +47,7 @@ SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewControl
 `mapHeight` (default 150) The initial height of the map. If the map bounces, it will return to this size.
 
 ### Example
-To run the example project, you will need to initialise the [SPGooglePlacesAutocomplete](https://github.com/spoletto/SPGooglePlacesAutocomplete) submodule:
+To run the example project, you will need to initialise the [SPGooglePlacesAutocomplete](https://github.com/spoletto/SPGooglePlacesAutocomplete) and [SVProgressHUD](https://github.com/samvermette/SVProgressHUD) submodules:
 `$ git submodule update --init --recursive`
 
 Once initialised, you will need to provide your own [Google Places API key](https://developers.google.com/places/documentation/).
@@ -56,7 +56,7 @@ SPGooglePlacesAutocomplete is used by `ExampleAutoCompleteTableViewDataSource` t
 
 ## Requirements
 
-SPHLocationPicker requires [iOS 5.0](http://developer.apple.com/library/ios/#releasenotes/General/WhatsNewIniPhoneOS/Articles/iPhoneOS4.html) and above.
+SPHLocationPicker requires [iOS 5.0](http://developer.apple.com/library/ios/#releasenotes/General/WhatsNewIniOS/Articles/iOS5.html#//apple_ref/doc/uid/TP30915195-SW1) and above.
 
 ### ARC
 

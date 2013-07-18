@@ -13,6 +13,8 @@
 		F51775C21785C8A500E86EAC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51775C11785C8A500E86EAC /* CoreLocation.framework */; };
 		F51775C41785CC6F00E86EAC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51775C31785CC6F00E86EAC /* MapKit.framework */; };
 		F51FCC7F1795A87000871FF0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51FCC7E1795A87000871FF0 /* QuartzCore.framework */; };
+		F55B7E5B17982D41003B114E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F55B7E5817982D41003B114E /* SVProgressHUD.bundle */; };
+		F55B7E5C17982D41003B114E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F55B7E5A17982D41003B114E /* SVProgressHUD.m */; };
 		F581B946178AB37E00A69BDA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F581B945178AB37E00A69BDA /* AddressBookUI.framework */; };
 		F5AF29261787164100324680 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF29141787164100324680 /* SPGooglePlacesAutocompletePlace.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F5AF29271787164100324680 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF29161787164100324680 /* SPGooglePlacesAutocompleteQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -56,6 +58,9 @@
 		F51775C11785C8A500E86EAC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F51775C31785CC6F00E86EAC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F51FCC7E1795A87000871FF0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F55B7E5817982D41003B114E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		F55B7E5917982D41003B114E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		F55B7E5A17982D41003B114E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		F581B945178AB37E00A69BDA /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		F5AF29131787164100324680 /* SPGooglePlacesAutocompletePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompletePlace.h; sourceTree = "<group>"; };
 		F5AF29141787164100324680 /* SPGooglePlacesAutocompletePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompletePlace.m; sourceTree = "<group>"; };
@@ -128,6 +133,17 @@
 			path = SPHLocationPicker;
 			sourceTree = "<group>";
 		};
+		F55B7E5717982D41003B114E /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				F55B7E5817982D41003B114E /* SVProgressHUD.bundle */,
+				F55B7E5917982D41003B114E /* SVProgressHUD.h */,
+				F55B7E5A17982D41003B114E /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			path = Example/Vendor/SVProgressHUD/SVProgressHUD;
+			sourceTree = SOURCE_ROOT;
+		};
 		F5AF29071787164100324680 /* SPGooglePlacesAutocomplete */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +198,7 @@
 		F5D965E5178488CE001F7582 /* SPHLocationPickerExample */ = {
 			isa = PBXGroup;
 			children = (
+				F55B7E5717982D41003B114E /* SVProgressHUD */,
 				F5AF29071787164100324680 /* SPGooglePlacesAutocomplete */,
 				F5D96633178489E0001F7582 /* SPHAppDelegate.h */,
 				F5D96634178489E0001F7582 /* SPHAppDelegate.m */,
@@ -306,6 +323,7 @@
 				F5D9662F17848997001F7582 /* Default@2x.png in Resources */,
 				F5D9663017848997001F7582 /* InfoPlist.strings in Resources */,
 				F5D9663117848997001F7582 /* SPHViewController.xib in Resources */,
+				F55B7E5B17982D41003B114E /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +368,7 @@
 				F5AF29271787164100324680 /* SPGooglePlacesAutocompleteQuery.m in Sources */,
 				F5AF29281787164100324680 /* SPGooglePlacesAutocompleteUtilities.m in Sources */,
 				F5AF292B1787164100324680 /* SPGooglePlacesPlaceDetailQuery.m in Sources */,
+				F55B7E5C17982D41003B114E /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
