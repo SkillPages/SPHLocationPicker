@@ -3,6 +3,8 @@ SPHLocationPicker
 
 SPHLocationPicker provides a configurable UITableView with a dynamically resizing MKMapView which can be used to allow a user select a location. The map can expand and contract as the user drags the tableview. The selected item can be returned to the calling controller as a [CLPlacemark](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLPlacemark_class/Reference/Reference.html).
 
+<img src="https://raw.github.com/SkillPages/SPHLocationPicker/master/Screenshot.PNG" />
+
 ##Usage
 ```obj-c
     SPHLocationPickerViewController *locationPicker = [[SPHLocationPickerViewController alloc] initWithSucess:^(CLPlacemark *place){
